@@ -4,11 +4,11 @@ int _printf(const char *format, ...)
 {
 int i, count, value;
 va_list args;
+va_start(args, format);
 
 i = 0;
 count = 0;
 value = 0;
-va_start(args, format);
 int (*f)(va_list);
 /*print parsint a null pointer*/
 if (format == NULL)
