@@ -2,5 +2,6 @@
 
 int print_cent(va_list args)
 {
-    return (0);
+	return (0);
 }
+

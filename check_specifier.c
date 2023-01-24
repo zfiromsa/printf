@@ -11,10 +11,11 @@ func_t my_array[4] ={
 };
 for (i = 0; my_array[i].t != NULL; i++)
 {
-if (*(my_array[i].t) == *format)
-{
-return (my_array[i].f);
-}
+	if (*(my_array[i].t) == *format)
+	{
+		return (my_array[i].f);
+	}
 }
 return (NULL);
 }
+
