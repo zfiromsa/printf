@@ -2,13 +2,21 @@
 
 int print_str(va_list args)
 {
-char c = (char)va_arg(args, int);
+int i;
+char *tmp;
 int count = 0;
-if (c)
+tmp = va_arg(args, char *);
+
+i = 0;
+if (tmp)
 {
-	count = write(1, &c, 1);
-	return (count);
+while (tmp[0 + i])
+{
+count = write(1, &tmp, 1);
+i++;
 }
+return (count);
+} 
 return (0);
 }
 
