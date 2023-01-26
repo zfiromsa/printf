@@ -12,6 +12,7 @@ char *t;
 int (*f)(va_list);
 }func_t;
 
+int (*f)(va_list);
 int _printf(const char *format, ...);
 int (*check_specifier(const char *format))(va_list);
 int print_char(va_list args);
