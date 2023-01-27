@@ -3,6 +3,7 @@
 int print_decm(va_list args)
 {
 unsigned int c = (unsigned int)va_arg(args, int);
+
 int count = 0;
 if (c)
 {

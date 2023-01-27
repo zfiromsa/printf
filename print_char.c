@@ -2,12 +2,15 @@
 
 int print_char(va_list args)
 {
-char c = (char)va_arg(args, int);
-int count = 0;
-if (c)
-{
-	count = write(1, &c, 1);
-	return (count);
+	unsigned char my_char;
+
+	my_char = va_arg(args, int);
+	_putchar(my_char);
+	return (1);
 }
-return (0);
+
+int print_cent(void)
+{
+	_putchar('%');
+	return (1);
 }
