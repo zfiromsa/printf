@@ -1,8 +1,8 @@
 #include "main.h"
 
-int print_char(va_list args)
+int print_int(va_list args)
 {
-char c = (char)va_arg(args, int);
+unsigned int c = (unsigned int)va_arg(args, int);
 int count = 0;
 if (c)
 {

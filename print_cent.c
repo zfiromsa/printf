@@ -2,13 +2,20 @@
 
 int print_cent(va_list args)
 {
-char c = (char)va_arg(args, int);
+int i;
+char *tmp, c;
 int count = 0;
-if (c)
+i = 0;
+tmp = va_arg(args, char *);
+if (tmp)
 {
-	count = write(1, &c, 1);
-	return (count);
+if ((tmp[0 + 1]) == '%')
+{
+c = tmp[0 + 1];
+count = write(1, &c, 1);
+i++;
 }
+return (count);
+} 
 return (0);
 }
-

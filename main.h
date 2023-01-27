@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 typedef struct func
 {
@@ -18,6 +19,8 @@ int (*check_specifier(const char *format))(va_list);
 int print_char(va_list args);
 int print_cent(va_list args);
 int print_str(va_list args);
+int print_decm(va_list args);
+int print_int(va_list args);
 
 #endif
 
