@@ -2,13 +2,14 @@
 
 int _printf(const char *format, ...)
 {
-unsigned int i, count;
+int i, count, value;
 va_list args;
 va_start(args, format);
 
 
 i = 0;
 count = 0;
+value = 0;
 /*print parsint a null pointer*/
 if (format == NULL)
 {
@@ -16,36 +17,35 @@ return (-1);
 }
 while (format[i])
 {
-while (format[i] != '%' && format[i])
+if (format[i] != '%')
 {
-_putchar(format[i]);
-count++;
+value = write(1,&format[i], 1);
+count = count + value;
 i++;
+continue;
 }
-if (format[i] != '\0')
+if (format[i] == '%')
 {
-return (count);
-}
 f = check_specifier(&format[i + 1]);
 if (f != NULL)
 {
-count += f(args);
+value = f(args);
+count = count + value;
 i = i + 2;
 continue;
 }
-if (format[i + 1])
+if (format[i + 1] == '\0')
 {
-return (-1);
+break;
 }
-if (format[i + 1] != '%')
+if (format[i + 1] != '\0')
 {
-i = i + 2;
-}
-else
-{
+value = write(1,&format[i], 1);
+count = count + value;
 i++;
+continue;
 }
 }
-va_end(args);
+}
 return (count);
 }

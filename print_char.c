@@ -14,3 +14,4 @@ int print_cent(void)
 	_putchar('%');
 	return (1);
 }
+
