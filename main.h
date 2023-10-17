@@ -14,20 +14,21 @@
  */
 typedef struct op
 {
-    char *op;
-    int (*f)(va_list ap);
+    char op;
+    int (*f)(va_list);
 } op_t;
 
 int (*get_op_func(const char *c))(va_list ap);
 int _printf(const char *format, ...);
 int _putchar(char c);
+int _putchar_(va_list ap);
 int _printstr(va_list ap);
 int _printdec(va_list ap);
 int _printint(va_list ap);
 int _printunsdec(va_list ap);
 int _printoct(va_list ap);
 int _prinhexdec(va_list ap);
-int _print_(char c);
+int _print_(va_list ap);
 
 #endif
 

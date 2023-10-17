@@ -1,23 +1,11 @@
 #include "main.h"
 
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
 int _printstr(va_list ap)
 {
     int printed_chars;
     char ch, *str;
 
-    str = va_arg(ap, char);
+    str = va_arg(ap, char *);
     printed_chars = 0;
     if (str == NULL)
     {
@@ -34,40 +22,49 @@ int _printstr(va_list ap)
     return printed_chars;
 }
 int _printdec(va_list ap)
-{}
-
-int _printint(va_list ap)
 {
-    int n, printed_chars;
-
-    n = va_arg(ap, int);
-    printed_chars = 0;
-    if (n < 0)
-    {
-        _putchar('-');
-        printed_chars++;
-        n *= -1;
-    }
-
-    if (n / 10 != 0)
-        printed_chars += print_int(n / 10);
-
-    _putchar('0' + n % 10);
-    printed_chars++;
-    return printed_chars;
+    (void)ap;
+    return 0;
 }
 
+
+
 int _printunsdec(va_list ap)
-{}
+{
+    (void)ap;
+    return 0;
+}
 
 int _printoct(va_list ap)
-{}
+{
+    (void)ap;
+    return 0;
+}
 
 int _prinhexdec(va_list ap)
-{}
-
-int _print_(char c)
 {
+    (void)ap;
+     return 0;
+}
+
+int _print_(va_list ap)
+{
+    (void)ap;
     _putchar('%');
     return (1);
 }
+/**
+ * _putchar - writes the character c to stdout.
+ * @c: the char to be print
+ * Return: on success 1 or on error -1.
+ */
+int _putchar_(va_list ap)
+{
+    int i;
+    char c;
+
+    c = va_arg(ap, int);
+    i = _putchar(c);
+    return (i);
+}
+
