@@ -1,64 +1,26 @@
-#include "printf.h"
+#include "main.h"
 
 int _printf(const char *format, ...)
 {
 	va_list ap;
-	int count;
+	int count, (*operation)(va_list);
 
 	va_start(ap, format);
 	count = 0;
-	while (*ap != '\0')
+	while (format != '\0')
 	{
-		if (*ap == '%')
+		if (*format == '%')
 		{
-			ap++;
-			switch (*ap)
-			{
-				case 'd':
-					//////////
-					count++;
-					break;
-				case 'i':
-					//////
-					count++;
-					break;
-				case 'b':
-                                        //////
-                                        count++;
-                                        break;
-                                case 'u':
-                                        //////
-                                        count++;
-                                        break;
-                                case 'o':
-                                        //////
-                                        count++;
-                                        break;
-                                case 'x':
-                                        //////
-                                        count++;
-                                        break;
-                                case 'X':
-                                        //////
-                                        count++;
-                                        break;
-                                case 'S':
-                                        //////
-                                        count++;
-                                        break;
-                                case '%':
-                                        _putchar('%');
-                                        count++;
-                                        break;
-				default:
-			}
+			format++;
+			operation = get_op_func(format);
+			count += operation(ap);
 		}
 		else
 		{
-			/////
-
+			_putchar(*format);
+			count++;
 		}
-		ap++;
+		format++;
 	}
 	va_end(ap);
 	return (count);
