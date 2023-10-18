@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 			{
 				count += operation(ap);
 			}
+			else
 			{
 				_putchar(*format);
 				count++;

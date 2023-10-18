@@ -31,5 +31,7 @@ int main(void)
     printf("%\n");
     _printf("%K\n");
     printf("%K\n");
+    _printf("%c\n", 'S');
+    printf("%c\n", 'S');
     return (0);
 }
