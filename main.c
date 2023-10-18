@@ -27,11 +27,8 @@ int main(void)
     printf("String:[%s]\n", "I am a string !");
    _printf(NULL); 
     printf(NULL);
-    _printf("%");
-    printf("%\n");
-    _printf("%K\n");
-    printf("%K\n");
-    _printf("%c\n", 'S');
-    printf("%c\n", 'S');
+printf("%d, %d", _printf("%!\n"), _printf("%!\n"));
+
+
     return (0);
 }
