@@ -2,38 +2,39 @@
 
 int _printint(va_list ap)
 {
-    int i, j, n;
-    char buffer[20];
+    int number,rvnumber, digit, count;
 
-    n = va_arg(ap, int);
-    i = 0;
-    if (n < 0)
+    count = 0;
+    number = va_arg(ap, int);
+    if (number < 0)
     {
         _putchar('-');
-        n = -n;
-        i++;
+        count++;
+        number = -number;
     }
-    if (n == 0)
+
+    if (number == 0)
     {
         _putchar('0');
-        i++;
+        count++;
     }
     else
     {
-        j = 0;
-        while(n > 0)
+        rvnumber = 0;
+        while (number > 0)
         {
-            buffer[j] = (n % 10) + '0';
-            n = n / 10;
-            i += j;
-            j++;
+            digit = number % 10;
+            rvnumber = rvnumber * 10 + digit;
+            number /= 10;
+            count++;
         }
-        while (j > 0)
+
+        while (rvnumber > 0)
         {
-            j--;
-            _putchar(buffer[j]);
+            int digit = rvnumber % 10;
+            _putchar(digit + '0');
+            rvnumber /= 10;
         }
-        
     }
-    return j;
+    return count;
 }

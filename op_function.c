@@ -1,26 +1,5 @@
 #include "main.h"
 
-int _printstr(va_list ap)
-{
-    int printed_chars;
-    char ch, *str;
-
-    str = va_arg(ap, char *);
-    printed_chars = 0;
-    if (str == NULL)
-    {
-        str = "(null)";
-    }
-    while (ch != '\0')
-    {
-        ch = *str;
-        _putchar(ch);
-        printed_chars++;
-        str++;
-    }
-
-    return printed_chars;
-}
 int _printdec(va_list ap)
 {
     (void)ap;

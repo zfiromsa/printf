@@ -14,15 +14,18 @@ int (*get_op_func(const char *c))(va_list ap)
     };
     int i;
 
+    if (c == NULL)
+    {
+        return (&_print_error);
+    }
     i = 0;
     while (ops[i].op)
     {
-        if ((ops[i].op) == *c && c[1] == '\0')
+        if ((ops[i].op) == *c)
         {
             return (ops[i].f);
         }
         i++;
     }
-    printf("Error\n");
-    exit(99);
+    return NULL;
 }
