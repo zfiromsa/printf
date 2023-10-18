@@ -29,7 +29,6 @@ int _printunsdec(va_list ap);
 int _printoct(va_list ap);
 int _prinhexdec(va_list ap);
 int _print_(va_list ap);
-int _print_error(va_list ap);
 
 #endif
 
