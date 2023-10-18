@@ -9,7 +9,7 @@ int (*get_op_func(const char *c))(va_list ap)
 		{'i', &_printint},
 		{'u', &_printunsdec},
 		{'o', &_printoct},
-		{'x', &_prinhexdec},
+		{'x', &_prinhexdec}
 	};
 	int i;
 
