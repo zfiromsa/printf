@@ -7,13 +7,26 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 	count = 0;
+	if (format != NULL)
+	{
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+			{
+				return (count);
+			}
 			operation = get_op_func(format);
-			count += operation(ap);
+			if (operation != NULL)
+			{
+				count += operation(ap);
+			}
+			{
+				_putchar(*format);
+				count++;
+			}
 		}
 		else
 		{
@@ -21,6 +34,7 @@ int _printf(const char *format, ...)
 			count++;
 		}
 		format++;
+	}
 	}
 	va_end(ap);
 	return (count);

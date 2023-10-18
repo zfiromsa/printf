@@ -16,7 +16,7 @@ int (*get_op_func(const char *c))(va_list ap)
 
     if (c == NULL)
     {
-        return (&_print_error);
+        return (NULL);
     }
     i = 0;
     while (ops[i].op)

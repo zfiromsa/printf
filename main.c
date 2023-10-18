@@ -25,5 +25,11 @@ int main(void)
     printf("Character:[%c]\n", 'H');
     _printf("12String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
+   _printf(NULL); 
+    printf(NULL);
+    _printf("%");
+    printf("%\n");
+    _printf("%K\n");
+    printf("%K\n");
     return (0);
 }
